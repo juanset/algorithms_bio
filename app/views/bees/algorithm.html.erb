@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  The result is: best;
+<p><span>Done! Solution: </span><br>
+  f= <%= @best[:fitness]%>
+  <br>
+  s=<%= @best[:vector].inspect%>
 </p>
 
 <a href="/bees">Back</a>

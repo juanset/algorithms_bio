@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :ants
   resources :bees
 
-  get '/bees/algorithm/:id', to: 'bees#algorithm', as: 'algorithm'
+  get '/bees/algorithm/:id', to: 'bees#algorithm',  as: 'algorithm'
   get 'welcome/index'
 
 

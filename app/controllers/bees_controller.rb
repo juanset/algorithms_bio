@@ -62,10 +62,11 @@ class BeesController < ApplicationController
   end
 
   # algoritmo de abejas
-  def algorithm
-    bee =Bee.find(params[:id])
-    best = search(bee.max_gens, bee.search_space, bee.num_bees, bee.num_sites, bee.elite_sites, bee.patch_size, bee.e_bees, bee.o_bees)
-    puts "done! Solution: f=#{best[:fitness]}, s=#{best[:vector].inspect}"
+  def algorithm()
+
+    bee = Bee.find(params[:id])
+    @best = search(bee.max_gens, bee.search_space, bee.num_bees, bee.num_sites, bee.elite_sites, bee.patch_size, bee.e_bees, bee.o_bees)
+    puts "done! Solution: f=#{@best[:fitness]}, s=#{@best[:vector].inspect}"
   end
 
   def objective_function(vector)

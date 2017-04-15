@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id_Problem</th>
       <th>Problem size</th>
       <th>Search space</th>
       <th>Max gens</th>
@@ -21,6 +22,7 @@
   <tbody>
     <% @bees.each do |bee| %>
       <tr>
+        <td><%= bee.id%></td>
         <td><%= bee.problem_size %></td>
         <td><%= bee.search_space %></td>
         <td><%= bee.max_gens %></td>
@@ -33,6 +35,7 @@
         <td><%= link_to 'Show', bee %></td>
         <td><%= link_to 'Edit', edit_bee_path(bee) %></td>
         <td><%= link_to 'Destroy', bee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Algorithm', "/bees/algorithm/#{bee.id}" %></td>
         <!--<td><%= link_to "Algorithm",  method:'algorithm'%></td>-->
         <!--<td><%= link_to "Result",bee,  method: "ant"%></td>-->
         <td><a href="/resultado/bee">Result</a></td>
