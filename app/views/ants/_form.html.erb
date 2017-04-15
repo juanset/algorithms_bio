@@ -1,0 +1,47 @@
+<%= form_for(ant) do |f| %>
+  <% if ant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ant.errors.count, "error") %> prohibited this ant from being saved:</h2>
+
+      <ul>
+      <% ant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :set %>
+    <%= f.text_field :set %>
+  </div>
+
+  <div class="field">
+    <%= f.label :max_it %>
+    <%= f.number_field :max_it %>
+  </div>
+
+  <div class="field">
+    <%= f.label :num_ants %>
+    <%= f.number_field :num_ants %>
+  </div>
+
+  <div class="field">
+    <%= f.label :decay_factor %>
+    <%= f.text_field :decay_factor %>
+  </div>
+
+  <div class="field">
+    <%= f.label :c_heur %>
+    <%= f.text_field :c_heur %>
+  </div>
+
+  <div class="field">
+    <%= f.label :c_hist %>
+    <%= f.text_field :c_hist %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

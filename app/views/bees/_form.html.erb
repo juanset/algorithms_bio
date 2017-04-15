@@ -1,0 +1,62 @@
+<%= form_for(bee) do |f| %>
+  <% if bee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bee.errors.count, "error") %> prohibited this bee from being saved:</h2>
+
+      <ul>
+      <% bee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :problem_size %>
+    <%= f.number_field :problem_size %>
+  </div>
+
+  <div class="field">
+    <%= f.label :search_space %>
+    <%= f.text_field :search_space %>
+  </div>
+
+  <div class="field">
+    <%= f.label :max_gens %>
+    <%= f.number_field :max_gens %>
+  </div>
+
+  <div class="field">
+    <%= f.label :num_bees %>
+    <%= f.number_field :num_bees %>
+  </div>
+
+  <div class="field">
+    <%= f.label :num_sites %>
+    <%= f.number_field :num_sites %>
+  </div>
+
+  <div class="field">
+    <%= f.label :elite_sites %>
+    <%= f.number_field :elite_sites %>
+  </div>
+
+  <div class="field">
+    <%= f.label :patch_size %>
+    <%= f.number_field :patch_size %>
+  </div>
+
+  <div class="field">
+    <%= f.label :e_bees %>
+    <%= f.number_field :e_bees %>
+  </div>
+
+  <div class="field">
+    <%= f.label :o_bees %>
+    <%= f.number_field :o_bees %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

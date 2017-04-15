@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  set: MyString
+  max_it: 1
+  num_ants: 1
+  decay_factor: 1.5
+  c_heur: 1.5
+  c_hist: 1.5
+
+two:
+  set: MyString
+  max_it: 1
+  num_ants: 1
+  decay_factor: 1.5
+  c_heur: 1.5
+  c_hist: 1.5

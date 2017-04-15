@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Set</th>
+      <th>Max it</th>
+      <th>Num ants</th>
+      <th>Decay factor</th>
+      <th>C heur</th>
+      <th>C hist</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ants.each do |ant| %>
+      <tr>
+        <td><%= ant.set %></td>
+        <td><%= ant.max_it %></td>
+        <td><%= ant.num_ants %></td>
+        <td><%= ant.decay_factor %></td>
+        <td><%= ant.c_heur %></td>
+        <td><%= ant.c_hist %></td>
+        <td><%= link_to 'Show', ant %></td>
+        <td><%= link_to 'Edit', edit_ant_path(ant) %></td>
+        <td><%= link_to 'Destroy', ant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!--<td><%= link_to "Algorithm",  method:'algorithm'%></td>-->
+        <!--<td><%= link_to "Result",ant,  method: "ant"%></td>-->
+        <td><a href="/resultado/ant">Result</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New Ant', new_ant_path %>
+<br>
+<a href="/">Back</a>

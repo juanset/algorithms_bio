@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  problem_size: 1
+  search_space: MyString
+  max_gens: 1
+  num_bees: 1
+  num_sites: 1
+  elite_sites: 1
+  patch_size: 1
+  e_bees: 1
+  o_bees: 1
+
+two:
+  problem_size: 1
+  search_space: MyString
+  max_gens: 1
+  num_bees: 1
+  num_sites: 1
+  elite_sites: 1
+  patch_size: 1
+  e_bees: 1
+  o_bees: 1

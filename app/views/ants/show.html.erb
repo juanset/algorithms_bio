@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Set:</strong>
+  <%= @ant.set %>
+</p>
+
+<p>
+  <strong>Max it:</strong>
+  <%= @ant.max_it %>
+</p>
+
+<p>
+  <strong>Num ants:</strong>
+  <%= @ant.num_ants %>
+</p>
+
+<p>
+  <strong>Decay factor:</strong>
+  <%= @ant.decay_factor %>
+</p>
+
+<p>
+  <strong>C heur:</strong>
+  <%= @ant.c_heur %>
+</p>
+
+<p>
+  <strong>C hist:</strong>
+  <%= @ant.c_hist %>
+</p>
+
+<%= link_to 'Edit', edit_ant_path(@ant) %> |
+<%= link_to 'Back', ants_path %>

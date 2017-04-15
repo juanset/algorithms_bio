@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Problem size:</strong>
+  <%= @bee.problem_size %>
+</p>
+
+<p>
+  <strong>Search space:</strong>
+  <%= @bee.search_space %>
+</p>
+
+<p>
+  <strong>Max gens:</strong>
+  <%= @bee.max_gens %>
+</p>
+
+<p>
+  <strong>Num bees:</strong>
+  <%= @bee.num_bees %>
+</p>
+
+<p>
+  <strong>Num sites:</strong>
+  <%= @bee.num_sites %>
+</p>
+
+<p>
+  <strong>Elite sites:</strong>
+  <%= @bee.elite_sites %>
+</p>
+
+<p>
+  <strong>Patch size:</strong>
+  <%= @bee.patch_size %>
+</p>
+
+<p>
+  <strong>E bees:</strong>
+  <%= @bee.e_bees %>
+</p>
+
+<p>
+  <strong>O bees:</strong>
+  <%= @bee.o_bees %>
+</p>
+
+<%= link_to 'Edit', edit_bee_path(@bee) %> |
+<%= link_to 'Back', bees_path %>
