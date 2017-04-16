@@ -27,9 +27,7 @@
         <td><%= link_to 'Show', ant %></td>
         <td><%= link_to 'Edit', edit_ant_path(ant) %></td>
         <td><%= link_to 'Destroy', ant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <!--<td><%= link_to "Algorithm",  method:'algorithm'%></td>-->
-        <!--<td><%= link_to "Result",ant,  method: "ant"%></td>-->
-        <td><a href="/resultado/ant">Result</a></td>
+        <td><%= link_to 'Algorithm', "/ants/algorithm/#{ant.id}" %></td>
       </tr>
     <% end %>
   </tbody>

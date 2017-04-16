@@ -63,10 +63,7 @@ class BeesController < ApplicationController
 
   # algoritmo de abejas
   def algorithm()
-
     @bee = Bee.find(params[:id])
-    #aSearch_space = @bee.search_space.scan(/\d/).map(&:to_i)
-    aSearch_space = [-5,-4,-3,-2,-1,0,1,2,3,4,5]
     problem_size = @bee.problem_size
     search_space = Array.new(problem_size) {|i| [-5, 5]}
     @best = search(@bee.max_gens, search_space, @bee.num_bees, @bee.num_sites, @bee.elite_sites, @bee.patch_size.to_f, @bee.e_bees, @bee.o_bees)

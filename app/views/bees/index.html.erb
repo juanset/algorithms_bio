@@ -36,10 +36,6 @@
         <td><%= link_to 'Edit', edit_bee_path(bee) %></td>
         <td><%= link_to 'Destroy', bee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'Algorithm', "/bees/algorithm/#{bee.id}" %></td>
-        <!--<td><%= link_to "Algorithm",  method:'algorithm'%></td>-->
-        <!--<td><%= link_to "Result",bee,  method: "ant"%></td>-->
-        <td><a href="/resultado/bee">Result</a></td>
-        
       </tr>
     <% end %>
   </tbody>
