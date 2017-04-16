@@ -64,18 +64,21 @@ class BeesController < ApplicationController
   # algoritmo de abejas
   def algorithm()
 
-    bee = Bee.find(params[:id])
-    @best = search(bee.max_gens, bee.search_space, bee.num_bees, bee.num_sites, bee.elite_sites, bee.patch_size, bee.e_bees, bee.o_bees)
+    @bee = Bee.find(params[:id])
+    #aSearch_space = @bee.search_space.scan(/\d/).map(&:to_i)
+    aSearch_space = [-5,-4,-3,-2,-1,0,1,2,3,4,5]
+    problem_size = @bee.problem_size
+    search_space = Array.new(problem_size) {|i| [-5, 5]}
+    @best = search(@bee.max_gens, search_space, @bee.num_bees, @bee.num_sites, @bee.elite_sites, @bee.patch_size.to_f, @bee.e_bees, @bee.o_bees)
     puts "done! Solution: f=#{@best[:fitness]}, s=#{@best[:vector].inspect}"
   end
-
   def objective_function(vector)
     return vector.inject(0.0) {|sum, x| sum +  (x ** 2.0)}
   end
 
   def random_vector(minmax)
     return Array.new(minmax.size) do |i|
-      minmax[i][0].to_r + ((minmax[i][1].to_r - minmax[i][0].to_i) * rand())
+      minmax[i][0] + ((minmax[i][1] - minmax[i][0]) * rand())
     end
   end
 
@@ -87,8 +90,8 @@ class BeesController < ApplicationController
     vector = []
     site.each_with_index do |v,i|
       v = (rand()<0.5) ? v+rand()*patch_size : v-rand()*patch_size
-      v = search_space[i][0].to_r if v < search_space[i][0].to_i
-      v = search_space[i][1].to_r if v > search_space[i][1].to_i
+      v = search_space[i][0] if v < search_space[i][0]
+      v = search_space[i][1] if v > search_space[i][1]
       vector << v
     end
     bee = {}
