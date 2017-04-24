@@ -29,7 +29,7 @@ class AntsController < ApplicationController
 
     respond_to do |format|
       if @ant.save
-        format.html { redirect_to @ant, notice: 'Ant was successfully created.' }
+        format.html { redirect_to @ant, notice: ' Hormiga creada exitosamente.' }
         format.json { render :show, status: :created, location: @ant }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class AntsController < ApplicationController
   def update
     respond_to do |format|
       if @ant.update(ant_params)
-        format.html { redirect_to @ant, notice: 'Ant was successfully updated.' }
+        format.html { redirect_to @ant, notice: 'Hormiga actualizada correctamente.' }
         format.json { render :show, status: :ok, location: @ant }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class AntsController < ApplicationController
   def destroy
     @ant.destroy
     respond_to do |format|
-      format.html { redirect_to ants_url, notice: 'Ant was successfully destroyed.' }
+      format.html { redirect_to ants_url, notice: 'Hormiga ha sido eliminada satisfactoriamente..' }
       format.json { head :no_content }
     end
   end
@@ -158,18 +158,21 @@ class AntsController < ApplicationController
       end
       decay_pheromone(pheromone, decay_factor)
       update_pheromone(pheromone, solutions)
-      puts " > iteration #{(iter+1)}, best=#{best[:cost]}"
+      puts " > Iteracion #{(iter+1)}, Mejor=#{best[:cost]}"
+      @iteracion = iter+1
+      @evaluando = best[:cost]
     end
     return best
   end
 
 def algorithm()
   @ant = Ant.find(params[:id])
-  @berlin52 =  JSON.parse(@ant.set)
-  #@berlin52 = @ant.set.scan(/\d/).map(&:to_i)
+  #@berlin52 =  JSON.parse(@ant.set)
+  reg = /(?<=\[)[\d,?\s?]+(?=\])/
+  @berlin52 = @ant.set.scan(reg).map { |s| s.scan(/\d+/).map(&:to_i) }
   #@berlin52= [[565,575],[25,185],[345,750],[945,685],[845,655],[880,660],[25,230],[525,1000],[580,1175],[650,1130],[1605,620],[1220,580],[1465,200],[1530,5],[845,680],[725,370],[145,665], [415,635],[510,875],[560,365],[300,465],[520,585],[480,415], [835,625],[975,580],[1215,245],[1320,315],[1250,400],[660,180],[410,250],[420,555],[575,665],[1150,1160],[700,580],[685,595],[685,610],[770,610],[795,645],[720,635],[760,650],[475,960],              [95,260],[875,920],[700,500],[555,815],[830,485],[1170,65],[830,610],[605,625],[595,360],[1340,725],[1740,245]]
   @best = search(@berlin52, @ant.max_it, @ant.num_ants, @ant.decay_factor.to_f, @ant.c_heur.to_f, @ant.c_hist.to_f)
-  puts "Done. Best Solution: c=#{@best[:cost]}, v=#{@best[:vector].inspect}"
+  puts "Terminado. Mejor solucion: c=#{@best[:cost]}, v=#{@best[:vector].inspect}"
 end
 
 

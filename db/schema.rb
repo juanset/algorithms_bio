@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170329191157) do
+ActiveRecord::Schema.define(version: 20170424135044) do
 
   create_table "ants", force: :cascade do |t|
     t.string   "set"
@@ -35,6 +35,18 @@ ActiveRecord::Schema.define(version: 20170329191157) do
     t.integer  "o_bees"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "colony_ants", force: :cascade do |t|
+    t.string   "set"
+    t.integer  "max_it"
+    t.integer  "num_ants"
+    t.float    "decay"
+    t.float    "c_heur"
+    t.float    "c_local_phero"
+    t.float    "c_greed"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end

@@ -1,18 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Bees</h1>
+<h1>Abejas</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Id_Problem</th>
-      <th>Problem size</th>
-      <th>Search space</th>
+      <th>Tamaño del problema</th>
+      <th>Espacio de búsqueda</th>
       <th>Max gens</th>
-      <th>Num bees</th>
-      <th>Num sites</th>
-      <th>Elite sites</th>
-      <th>Patch size</th>
+      <th>Num Abejas</th>
+      <th>Num Sitios</th>
+      <th>Elite Sitios</th>
+      <th>Tamaño del Patch</th>
       <th>E bees</th>
       <th>O bees</th>
       <th colspan="3"></th>
@@ -22,7 +21,6 @@
   <tbody>
     <% @bees.each do |bee| %>
       <tr>
-        <td><%= bee.id%></td>
         <td><%= bee.problem_size %></td>
         <td><%= bee.search_space %></td>
         <td><%= bee.max_gens %></td>
@@ -32,10 +30,10 @@
         <td><%= bee.patch_size %></td>
         <td><%= bee.e_bees %></td>
         <td><%= bee.o_bees %></td>
-        <td><%= link_to 'Show', bee %></td>
-        <td><%= link_to 'Edit', edit_bee_path(bee) %></td>
-        <td><%= link_to 'Destroy', bee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Algorithm', "/bees/algorithm/#{bee.id}" %></td>
+        <td><%= link_to 'Mostrar', bee %></td>
+        <td><%= link_to 'Editar', edit_bee_path(bee) %></td>
+        <td><%= link_to 'Algoritmo', "/bees/algorithm/#{bee.id}" %></td>
+        <td><%= link_to 'Eliminar', bee, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -43,6 +41,6 @@
 
 <br>
 
-<%= link_to 'New Bee', new_bee_path %>
+<%= link_to 'Nueva Abeja', new_bee_path %>
 <br>
-<a href="/">Back</a>
+<a href="/">Volver</a>

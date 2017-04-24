@@ -1,17 +1,16 @@
-<%= form_for(ant) do |f| %>
-  <% if ant.errors.any? %>
+<%= form_for(colony_ant) do |f| %>
+  <% if colony_ant.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(ant.errors.count, "error") %> prohibited this ant from being saved:</h2>
+      <h2><%= pluralize(colony_ant.errors.count, "error") %> prohibited this colony_ant from being saved:</h2>
 
       <ul>
-      <% ant.errors.full_messages.each do |message| %>
+      <% colony_ant.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-
-    <h4 class="contenido">Para crear un nuevo problema de hormigas se necesita:</h4>
+    <h4 class="contenido">Para crear un nuevo problema de Colonia de hormigas se necesita:</h4>
     <h4 class="contenido">
       <ul>
         <li><em>Conjunto: </em>El conjunto de elemento en el que se realizara</li>
@@ -23,7 +22,8 @@
       </ul>
     </h4>
 
-  <div class="field">
+
+    <div class="field">
     <%= f.label :Conjunto %>
     <%= f.text_field :set %>
   </div>
@@ -34,23 +34,28 @@
   </div>
 
   <div class="field">
-    <%= f.label :Num_Hormigas %>
+    <%= f.label :Num_Hormigas%>
     <%= f.number_field :num_ants %>
   </div>
 
   <div class="field">
-    <%= f.label :decay_factor %>
-    <%= f.text_field :decay_factor %>
+    <%= f.label :decay %>
+    <%= f.text_field :decay %>
   </div>
 
   <div class="field">
-    <%= f.label :C_Heur %>
+    <%= f.label :c_heur %>
     <%= f.text_field :c_heur %>
   </div>
 
   <div class="field">
-    <%= f.label :C_Hist %>
-    <%= f.text_field :c_hist %>
+    <%= f.label :c_local_phero %>
+    <%= f.text_field :c_local_phero %>
+  </div>
+
+  <div class="field">
+    <%= f.label :c_greed %>
+    <%= f.text_field :c_greed %>
   </div>
 
   <div class="actions">

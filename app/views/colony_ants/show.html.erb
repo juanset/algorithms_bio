@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Conjunto:</strong>
+  <%= @colony_ant.set %>
+</p>
+
+<p>
+  <strong>Max iteraciones:</strong>
+  <%= @colony_ant.max_it %>
+</p>
+
+<p>
+  <strong>Num Hormigas:</strong>
+  <%= @colony_ant.num_ants %>
+</p>
+
+<p>
+  <strong>Decay:</strong>
+  <%= @colony_ant.decay %>
+</p>
+
+<p>
+  <strong>C heur:</strong>
+  <%= @colony_ant.c_heur %>
+</p>
+
+<p>
+  <strong>C local phero:</strong>
+  <%= @colony_ant.c_local_phero %>
+</p>
+
+<p>
+  <strong>C greed:</strong>
+  <%= @colony_ant.c_greed %>
+</p>
+
+<%= link_to 'Editar', edit_colony_ant_path(@colony_ant) %> |
+<%= link_to 'Volver', colony_ants_path %>

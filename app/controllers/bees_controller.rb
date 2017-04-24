@@ -28,7 +28,7 @@ class BeesController < ApplicationController
 
     respond_to do |format|
       if @bee.save
-        format.html { redirect_to @bee, notice: 'Bee was successfully created.' }
+        format.html { redirect_to @bee, notice: 'Abeja creada exitosamente.' }
         format.json { render :show, status: :created, location: @bee }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class BeesController < ApplicationController
   def update
     respond_to do |format|
       if @bee.update(bee_params)
-        format.html { redirect_to @bee, notice: 'Bee was successfully updated.' }
+        format.html { redirect_to @bee, notice: 'Abeja actualizada correctamente.' }
         format.json { render :show, status: :ok, location: @bee }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class BeesController < ApplicationController
   def destroy
     @bee.destroy
     respond_to do |format|
-      format.html { redirect_to bees_url, notice: 'Bee was successfully destroyed.' }
+      format.html { redirect_to bees_url, notice: 'Abeja ha sido eliminada satisfactoriamente.' }
       format.json { head :no_content }
     end
   end
@@ -67,7 +67,7 @@ class BeesController < ApplicationController
     problem_size = @bee.problem_size
     search_space = Array.new(problem_size) {|i| [-5, 5]}
     @best = search(@bee.max_gens, search_space, @bee.num_bees, @bee.num_sites, @bee.elite_sites, @bee.patch_size.to_f, @bee.e_bees, @bee.o_bees)
-    puts "done! Solution: f=#{@best[:fitness]}, s=#{@best[:vector].inspect}"
+    puts "Terminado. Mejor solución: f=#{@best[:fitness]}, s=#{@best[:vector].inspect}"
   end
   def objective_function(vector)
     return vector.inject(0.0) {|sum, x| sum +  (x ** 2.0)}

@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Ants</h1>
+<h1>Problemas de Hormigas</h1>
 
-<table>
+<table class="tabla">
   <thead>
     <tr>
-      <th>Set</th>
-      <th>Max it</th>
-      <th>Num ants</th>
-      <th>Decay factor</th>
+      <th>Conjunto</th>
+      <th>Max iteraciones</th>
+      <th>Num Hormigas</th>
+      <th>Factor de decaimiento</th>
       <th>C heur</th>
       <th>C hist</th>
       <th colspan="3"></th>
@@ -18,22 +18,22 @@
   <tbody>
     <% @ants.each do |ant| %>
       <tr>
-        <td><%= ant.set %></td>
-        <td><%= ant.max_it %></td>
-        <td><%= ant.num_ants %></td>
-        <td><%= ant.decay_factor %></td>
-        <td><%= ant.c_heur %></td>
-        <td><%= ant.c_hist %></td>
-        <td><%= link_to 'Show', ant %></td>
-        <td><%= link_to 'Edit', edit_ant_path(ant) %></td>
-        <td><%= link_to 'Destroy', ant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Algorithm', "/ants/algorithm/#{ant.id}" %></td>
+        <td class="conjunto"><%= ant.set %></td>
+        <td class="datos"><%= ant.max_it %></td>
+        <td class="datos"><%= ant.num_ants %></td>
+        <td class="datos"><%= ant.decay_factor %></td>
+        <td class="datos"><%= ant.c_heur %></td>
+        <td class="datos"><%= ant.c_hist %></td>
+        <td class="datos"><%= link_to 'Mostrar', ant %></td>
+        <td class="datos"> <%= link_to 'Editar', edit_ant_path(ant) %></td>
+        <td class="datos"><%= link_to 'Algoritmo', "/ants/algorithm/#{ant.id}" %></td>
+        <td class="datos"><%= link_to 'Eliminar', ant, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-<%= link_to 'New Ant', new_ant_path %>
+<%= link_to 'Nuevo problema de hormigas', new_ant_path %>
 <br>
-<a href="/">Back</a>
+<%= link_to 'Volver', info_ant_path%>

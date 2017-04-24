@@ -1,0 +1,2 @@
+class ColonyAnt < ApplicationRecord
+end

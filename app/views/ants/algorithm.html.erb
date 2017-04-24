@@ -1,10 +1,12 @@
 <p id="notice"><%= notice %></p>
 Config = <%= @ant.inspect %>
+Iteración: <%= @iteracion%>
+Evaluando: <%= @evaluando%>
 <br>
-<p><span>Done!</span> Solution: <br>
+<p><span>Terminado!</span> Solución: <br>
   c = <%= @best[:cost]%>
   <br>
   v = <%= @best[:vector].inspect%>
 </p>
 
-<a href="/ants">Back</a>
+<a href="/ants">Volver</a>

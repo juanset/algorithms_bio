@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Colony Ants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Conjunto</th>
+      <th>Maximo iteraciones</th>
+      <th>Num Hormigas</th>
+      <th>Decay</th>
+      <th>C heur</th>
+      <th>C local phero</th>
+      <th>C greed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @colony_ants.each do |colony_ant| %>
+      <tr>
+        <td class="conjunto"><%= colony_ant.set %></td>
+        <td class="datos"><%= colony_ant.max_it %></td>
+        <td class="datos"><%= colony_ant.num_ants %></td>
+        <td class="datos"><%= colony_ant.decay %></td>
+        <td class="datos"><%= colony_ant.c_heur %></td>
+        <td class="datos"><%= colony_ant.c_local_phero %></td>
+        <td class="datos"><%= colony_ant.c_greed %></td>
+        <td class="datos"><%= link_to 'Mosstrar', colony_ant %></td>
+        <td class="datos"><%= link_to 'Editar', edit_colony_ant_path(colony_ant) %></td>
+        <td class="datos"><%= link_to 'Algoritmo', "/ants/algorithm/#{colony_ant.id}" %></td>
+        <td class="datos"><%= link_to 'Eliminar', colony_ant, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo problema de Colonia de Hormigas', new_colony_ant_path %>
+<br>
+<%= link_to 'Volver', info_colony_ant_path%>
