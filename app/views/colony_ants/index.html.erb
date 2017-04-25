@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Colony Ants</h1>
+<h1>Sistema de Colonia de Hormigas</h1>
 
 <table>
   <thead>
@@ -28,7 +28,7 @@
         <td class="datos"><%= colony_ant.c_greed %></td>
         <td class="datos"><%= link_to 'Mosstrar', colony_ant %></td>
         <td class="datos"><%= link_to 'Editar', edit_colony_ant_path(colony_ant) %></td>
-        <td class="datos"><%= link_to 'Algoritmo', "/ants/algorithm/#{colony_ant.id}" %></td>
+        <td class="datos"><%= link_to 'Algoritmo', "/colony_ants/algorithm/#{colony_ant.id}" %></td>
         <td class="datos"><%= link_to 'Eliminar', colony_ant, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>

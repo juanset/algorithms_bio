@@ -4,4 +4,8 @@ class InfoController < ApplicationController
 
   def ant
   end
+
+  def colony_ant
+  end
+
 end
