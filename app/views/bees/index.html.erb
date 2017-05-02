@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
-
 <h1>Problemas de Abejas</h1>
+<%= image_tag("bee.jpg") %>
 
-<table>
+<table class="tabla">
   <thead>
     <tr>
       <th>Tamaño del problema</th>
@@ -14,7 +14,10 @@
       <th>Tamaño del Patch</th>
       <th>E bees</th>
       <th>O bees</th>
-      <th colspan="3"></th>
+      <th ><i class="fa fa-list-alt fa-2x" aria-hidden="true"></i></th>
+      <th ><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></th>
+      <th ><i class="fa fa-line-chart fa-2x" aria-hidden="true"></i></th>
+      <th ><i class="fa fa-trash fa-2x" aria-hidden="true"></i></th>
     </tr>
   </thead>
 
@@ -43,4 +46,5 @@
 
 <%= link_to 'Nuevo Problema de Abejas', new_bee_path %>
 <br>
-<a href="/">Volver</a>
+<%= link_to 'Volver', info_bee_path%>
+<br>

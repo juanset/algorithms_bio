@@ -1,10 +1,15 @@
 body {
-  background-color: #fff;
-  color: #333;
+  background-color: #f3ecdc;
+ color: #66320e;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
   margin: 33px;
+}
+
+.contenido{
+  text-align: justify;
+  margin-right: 2em;
 }
 
 p, ol, ul, td {
@@ -21,27 +26,60 @@ pre {
 }
 
 a {
-  color: #000;
+  color: #8a4215;
 
   &:visited {
-    color: #666;
+    color: #66320e;
   }
 
   &:hover {
     color: #fff;
-    background-color: #000;
+    background-color: rgba(113, 7, 12, 0.93);
   }
 }
 
 th {
   padding-bottom: 5px;
+  text-align: center;
+  border-color: #66320e;
+  border-style: solid;
+  border-collapse: collapse;
+
 }
 
 td {
   padding-bottom: 7px;
   padding-left: 5px;
   padding-right: 5px;
+  text-align: center;
+  border-color: #1d1d1d;
+  border:solid;
+  border-collapse: collapse;
+  border-radius: 7px;
+  color: #66320e;
+
 }
+table {
+  border:solid;
+  border-collapse: collapse;
+}
+table a{
+  color: #8a4215;
+  &:visited {
+  color: #1d1d1d;
+}
+
+&:hover {
+  color: #fff;
+  background-color: rgba(188, 92, 5, 0.93);
+}}
+
+.tabla tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #bc5c05;
+  color: white;
+  border-color: #66320e;
+}
+
 
 div {
   &.field, &.actions {
