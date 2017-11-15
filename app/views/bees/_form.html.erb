@@ -10,47 +10,48 @@
       </ul>
     </div>
   <% end %>
-
+    <h4 class="contenido">Para crear un nuevo problema de hormigas se necesita:</h4>
+    <i>Tamaño del problema, ej: 3</i>
   <div class="field">
     <%= f.label :Tamaño_Problema %>
     <%= f.number_field :problem_size %>
   </div>
-
+    <i>Tamaño del espacio de búsqueda, ej: 5 para que el espacio de búsqueda sea [-5,5]</i>
   <div class="field">
     <%= f.label :Espacio_Busqueda %>
     <%= f.text_field :search_space %>
   </div>
-
+    <i>Máximo de generaciones, ej: 500</i>
   <div class="field">
     <%= f.label :Max_Gens %>
     <%= f.number_field :max_gens %>
   </div>
-
+    <i>Número de abejas, ej: 45</i>
   <div class="field">
     <%= f.label :Num_Abejas %>
     <%= f.number_field :num_bees %>
   </div>
-
+    <i>Número de sitios, ej: 3</i>
   <div class="field">
     <%= f.label :Num_Sitios %>
     <%= f.number_field :num_sites %>
   </div>
-
+    <i>Número de sitios élite(Debe ser menor que el número de sitios), ej: 1</i>
   <div class="field">
     <%= f.label :Elite_Sitios %>
     <%= f.number_field :elite_sites %>
   </div>
-
+    <i>Tamaño del camino (PatchSize) Ej: 3.0</i>
   <div class="field">
     <%= f.label :Tamaño_Camino %>
     <%= f.number_field :patch_size %>
   </div>
-
+    <i>Número de abejas élite (tradicionalmente menor que el número de otras abejas ), ej: 2</i>
   <div class="field">
     <%= f.label :e_bees %>
     <%= f.number_field :e_bees %>
   </div>
-
+    <i>Número de otras abejas, ej: 7</i>
   <div class="field">
     <%= f.label :o_bees %>
     <%= f.number_field :o_bees %>

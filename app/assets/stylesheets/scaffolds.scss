@@ -1,6 +1,6 @@
 body {
-  background-color: #f3ecdc;
- color: #66320e;
+  background-color: #ffffff;
+ color: #0a2966;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -26,22 +26,22 @@ pre {
 }
 
 a {
-  color: #8a4215;
+  color: #0a2966;
 
   &:visited {
-    color: #66320e;
+    color: #0037b9;
   }
 
   &:hover {
-    color: #fff;
-    background-color: rgba(113, 7, 12, 0.93);
+    color: #e9f3ee;
+    background-color: rgba(0, 55, 185, 0.93);
   }
 }
 
 th {
   padding-bottom: 5px;
   text-align: center;
-  border-color: #66320e;
+  border-color: #0a296e;
   border-style: solid;
   border-collapse: collapse;
 
@@ -52,11 +52,11 @@ td {
   padding-left: 5px;
   padding-right: 5px;
   text-align: center;
-  border-color: #1d1d1d;
+  border-color: #0a2966;
   border:solid;
   border-collapse: collapse;
   border-radius: 7px;
-  color: #66320e;
+  color: #0a296e;
 
 }
 table {
@@ -64,20 +64,22 @@ table {
   border-collapse: collapse;
 }
 table a{
-  color: #8a4215;
+  color: #0037b9;
   &:visited {
-  color: #1d1d1d;
+  color: #0a2966;
 }
 
 &:hover {
-  color: #fff;
-  background-color: rgba(188, 92, 5, 0.93);
-}}
+  color: #0a2966;
+  background-color: rgba(144, 200, 217, 0.93);
+  }
+}
 
 .tabla tbody tr:hover td, .table-hover tbody tr:hover th {
-  background-color: #bc5c05;
-  color: white;
-  border-color: #66320e;
+
+  background-color: #b1e9f1;
+  color: #0a2966;
+  border-color: #0037b9;
 }
 
 

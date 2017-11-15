@@ -65,7 +65,9 @@ class BeesController < ApplicationController
   def algorithm()
     @bee = Bee.find(params[:id])
     problem_size = @bee.problem_size
-    search_space = Array.new(problem_size) {|i| [-5, 5]}
+    s_p = @bee.search_space.to_i
+    puts "esta es el search_space ingresado:  #{@bee.search_space} fin! y lo que estoy pasando es: #{s_p} y #{-s_p}"
+    search_space = Array.new(problem_size) {|i| [-s_p, s_p]}
     @best = search(@bee.max_gens, search_space, @bee.num_bees, @bee.num_sites, @bee.elite_sites, @bee.patch_size.to_f, @bee.e_bees, @bee.o_bees)
     puts "Terminado. Mejor solución: f=#{@best[:fitness]}, s=#{@best[:vector].inspect}"
   end

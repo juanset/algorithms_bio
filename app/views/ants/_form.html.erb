@@ -12,43 +12,34 @@
   <% end %>
 
     <h4 class="contenido">Para crear un nuevo problema de hormigas se necesita:</h4>
-    <h4 class="contenido">
-      <ul>
-        <li><em>Conjunto: </em>El conjunto de elemento en el que se realizara, se digita el conjunto entre [ ] y cada nodo tambien en [ ] separados por comas, ejemplo: [[565,575],[25,185],[345,750],[945,685],[845,655],
-          [880,660],[25,230],[525,1000]]</li>
-        <li>El coeficiente de feromonas local feromona (historial) (σ)controla la cantidad de contribuciones de historial que se juega en una probabilidad de selección de componentes y se fija comúnmente a 0.1.</li>
-        <li>El coeficiente heurístico (β) controla la cantidad de información heurística específica del problema de contribución que juega en la probabilidad de selección de los componentes y está normalmente entre 2 y 5, como 2.5.</li>
-        <li>factor de desintegración (ρ) controla la velocidad a la que se pierde la información histórica y se fija comúnmente a 0,1.</li>
-        <li>El factor de avidez (q0) se fija generalmente a 0.9.</li>
-        <li>El número total de hormigas (m) generalmente se establece bajo, como 10.</li>
-      </ul>
-    </h4>
 
+    <li><em>Conjunto: </em>El conjunto de elemento en el que se realizara, se digita el conjunto entre [ ] y cada nodo tambien en [ ] separados por comas, ejemplo: [[565,575],[25,185],[345,750],[945,685],[845,655],
+      [880,660],[25,230],[525,1000]]</li>
   <div class="field">
     <%= f.label :Conjunto %>
     <%= f.text_field :set %>
   </div>
-
+<li>El número máximo de interacciones que se ejecutarán.</li>
   <div class="field">
     <%= f.label :Max_Iteraciones %>
     <%= f.number_field :max_it %>
   </div>
-
+    <li>El número total de hormigas (ɱ) se establece normalmente en el número de componentes del problema, como el número de ciudades en el TSP</li>
   <div class="field">
     <%= f.label :Num_Hormigas %>
     <%= f.number_field :num_ants %>
   </div>
-
+    <li>El factor de desintegración (ρ) controla la velocidad a la que se pierde la información histórica y se fija normalmente a 0.5</li>
   <div class="field">
     <%= f.label :decay_factor %>
     <%= f.text_field :decay_factor %>
   </div>
-
+    <li>El coeficiente heurístico (β) controla la cantidad de información heurística específica del problema de contribución que juega en la probabilidad de selección de los componentes y está normalmente entre 2 y 5, como 2.5.</li>
   <div class="field">
     <%= f.label :C_Heur %>
     <%= f.text_field :c_heur %>
   </div>
-
+    <li>El coeficiente de feromonas local feromona (historial) (σ)controla la cantidad de contribuciones de historial que se juega en una probabilidad de selección de componentes y se fija comúnmente a 1.0</li>
   <div class="field">
     <%= f.label :C_Hist %>
     <%= f.text_field :c_hist %>
